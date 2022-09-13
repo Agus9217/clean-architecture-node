@@ -11,7 +11,6 @@ const getOneWorkout = (req, res) => {
     if(!workoutId){
         return
     }
-
     const workout = workoutServices.getOneWorkout(workoutId)
     res.send({ status: 'OK', data: workout })
 }
@@ -40,8 +39,12 @@ const createNewWorkout = (req, res) => {
 }
 
 const updateWorkout = (req, res) => {
-    const updatedWorkout = workoutServices.updateWorkout(req.params.workoutId)
-    res.send(`Update workout ${req.params.workoutId}`)
+    const { body, params: { workoutId } } = req
+    if(!workoutId){
+        return
+    }
+    const updateWorkout = workoutServices.updateWorkout(workoutId, body)
+    res.send({ status: 'OK', data: updateWorkout })
 }
 
 const deleteOneWorkout = (req, res) => {

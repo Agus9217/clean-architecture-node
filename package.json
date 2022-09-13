@@ -1,7 +1,6 @@
 {
   "name": "clean-architecture",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,5 +16,14 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "uuid": "^8.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agus9217/clean-architecture-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Agus9217/clean-architecture-node/issues"
+  },
+  "homepage": "https://github.com/Agus9217/clean-architecture-node#readme",
+  "description": ""
 }
