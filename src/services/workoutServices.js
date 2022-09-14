@@ -18,17 +18,17 @@ const createNewWorkout = (newWorkout) => {
         createAt: new Date().toLocaleDateString('en-US', {timezone: 'UTC'}),
         updateAt: new Date().toLocaleDateString('en-US', {timezone: 'UTC'})
     }
-
-    const createdWorkout = Workout.createNewWorkout(workoutToInsert)
-    return createdWorkout
+  const createdWorkout = Workout.createNewWorkout(workoutToInsert)
+  return createdWorkout
 }
 
 const updateWorkout = (workoutId, change) => {
-    
+  const updateWorkout = Workout.updateOneWorkout(workoutId, change)
+  return updateWorkout
 }
 
-const deleteOneWorkout = () => {
-    return
+const deleteOneWorkout = (workoutId) => {
+    Workout.deleteOneWorkout(workoutId)
 }
 
 

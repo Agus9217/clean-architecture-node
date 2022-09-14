@@ -48,8 +48,12 @@ const updateWorkout = (req, res) => {
 }
 
 const deleteOneWorkout = (req, res) => {
-    workoutServices.deleteOneWorkout(req.params.workoutId)
-    res.send(`Delete workout ${req.params.id}` )
+  const { params: { workoutId } } = req
+  if(!workoutId){
+    return
+  }
+  workoutServices.deleteOneWorkout(workoutId)
+  res.status(204).send({ status: 'OK' })
 }
 
 module.exports = { 
